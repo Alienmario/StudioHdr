@@ -21,11 +21,10 @@
 
 #include <sdktools>
 
-#define INVALID_ADDRESS_OFFSET view_as<Address>(-1)
+#pragma semicolon 1
+#pragma newdecls required
 
-// Functions to get CStudioHdr from model path & delete it.
-Handle load_model;
-Handle delete_model;
+#define STUDIOHDR_INVALID_OFFSET view_as<Address>(-1)
 
 enum struct studiohdr_t
 {
@@ -105,427 +104,427 @@ enum struct studiohdr_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] studiohdr_t::id
-		if ((this.id = view_as<Address>(gamedata.GetOffset("studiohdr_t::id"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.id = view_as<Address>(gamedata.GetOffset("studiohdr_t::id"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::id' offset.");
 		}
 
 		// [offset] studiohdr_t::version
-		if ((this.version = view_as<Address>(gamedata.GetOffset("studiohdr_t::version"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.version = view_as<Address>(gamedata.GetOffset("studiohdr_t::version"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::version' offset.");
 		}
 
 		// [offset] studiohdr_t::checksum
-		if ((this.checksum = view_as<Address>(gamedata.GetOffset("studiohdr_t::checksum"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.checksum = view_as<Address>(gamedata.GetOffset("studiohdr_t::checksum"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::checksum' offset.");
 		}
 
 		// [offset] studiohdr_t::name
-		if ((this.name = view_as<Address>(gamedata.GetOffset("studiohdr_t::name"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.name = view_as<Address>(gamedata.GetOffset("studiohdr_t::name"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::name' offset.");
 		}
 
 		// [offset] studiohdr_t::length
-		if ((this.length = view_as<Address>(gamedata.GetOffset("studiohdr_t::length"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.length = view_as<Address>(gamedata.GetOffset("studiohdr_t::length"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::length' offset.");
 		}
 
 		// [offset] studiohdr_t::eyeposition
-		if ((this.eyeposition = view_as<Address>(gamedata.GetOffset("studiohdr_t::eyeposition"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.eyeposition = view_as<Address>(gamedata.GetOffset("studiohdr_t::eyeposition"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::eyeposition' offset.");
 		}
 
 		// [offset] studiohdr_t::illumposition
-		if ((this.illumposition = view_as<Address>(gamedata.GetOffset("studiohdr_t::illumposition"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.illumposition = view_as<Address>(gamedata.GetOffset("studiohdr_t::illumposition"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::illumposition' offset.");
 		}
 
 		// [offset] studiohdr_t::hull_min
-		if ((this.hull_min = view_as<Address>(gamedata.GetOffset("studiohdr_t::hull_min"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.hull_min = view_as<Address>(gamedata.GetOffset("studiohdr_t::hull_min"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::hull_min' offset.");
 		}
 
 		// [offset] studiohdr_t::hull_max
-		if ((this.hull_max = view_as<Address>(gamedata.GetOffset("studiohdr_t::hull_max"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.hull_max = view_as<Address>(gamedata.GetOffset("studiohdr_t::hull_max"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::hull_max' offset.");
 		}
 
 		// [offset] studiohdr_t::view_bbmin
-		if ((this.view_bbmin = view_as<Address>(gamedata.GetOffset("studiohdr_t::view_bbmin"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.view_bbmin = view_as<Address>(gamedata.GetOffset("studiohdr_t::view_bbmin"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::view_bbmin' offset.");
 		}
 
 		// [offset] studiohdr_t::view_bbmax
-		if ((this.view_bbmax = view_as<Address>(gamedata.GetOffset("studiohdr_t::view_bbmax"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.view_bbmax = view_as<Address>(gamedata.GetOffset("studiohdr_t::view_bbmax"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::view_bbmax' offset.");
 		}
 
 		// [offset] studiohdr_t::flags
-		if ((this.flags = view_as<Address>(gamedata.GetOffset("studiohdr_t::flags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flags = view_as<Address>(gamedata.GetOffset("studiohdr_t::flags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::flags' offset.");
 		}
 
 		// [offset] studiohdr_t::numbones
-		if ((this.numbones = view_as<Address>(gamedata.GetOffset("studiohdr_t::numbones"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numbones = view_as<Address>(gamedata.GetOffset("studiohdr_t::numbones"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numbones' offset.");
 		}
 
 		// [offset] studiohdr_t::boneindex
-		if ((this.boneindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::boneindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.boneindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::boneindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::boneindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numbonecontrollers
-		if ((this.numbonecontrollers = view_as<Address>(gamedata.GetOffset("studiohdr_t::numbonecontrollers"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numbonecontrollers = view_as<Address>(gamedata.GetOffset("studiohdr_t::numbonecontrollers"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numbonecontrollers' offset.");
 		}
 
 		// [offset] studiohdr_t::bonecontrollerindex
-		if ((this.bonecontrollerindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::bonecontrollerindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bonecontrollerindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::bonecontrollerindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::bonecontrollerindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numhitboxsets
-		if ((this.numhitboxsets = view_as<Address>(gamedata.GetOffset("studiohdr_t::numhitboxsets"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numhitboxsets = view_as<Address>(gamedata.GetOffset("studiohdr_t::numhitboxsets"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numhitboxsets' offset.");
 		}
 
 		// [offset] studiohdr_t::hitboxsetindex
-		if ((this.hitboxsetindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::hitboxsetindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.hitboxsetindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::hitboxsetindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::hitboxsetindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numlocalanim
-		if ((this.numlocalanim = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalanim"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numlocalanim = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalanim"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numlocalanim' offset.");
 		}
 
 		// [offset] studiohdr_t::localanimindex
-		if ((this.localanimindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localanimindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localanimindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localanimindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::localanimindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numlocalseq
-		if ((this.numlocalseq = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalseq"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numlocalseq = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalseq"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numlocalseq' offset.");
 		}
 
 		// [offset] studiohdr_t::localseqindex
-		if ((this.localseqindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localseqindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localseqindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localseqindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::localseqindex' offset.");
 		}
 
 		// [offset] studiohdr_t::activitylistversion
-		if ((this.activitylistversion = view_as<Address>(gamedata.GetOffset("studiohdr_t::activitylistversion"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.activitylistversion = view_as<Address>(gamedata.GetOffset("studiohdr_t::activitylistversion"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::activitylistversion' offset.");
 		}
 
 		// [offset] studiohdr_t::eventsindexed
-		if ((this.eventsindexed = view_as<Address>(gamedata.GetOffset("studiohdr_t::eventsindexed"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.eventsindexed = view_as<Address>(gamedata.GetOffset("studiohdr_t::eventsindexed"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::eventsindexed' offset.");
 		}
 
 		// [offset] studiohdr_t::numtextures
-		if ((this.numtextures = view_as<Address>(gamedata.GetOffset("studiohdr_t::numtextures"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numtextures = view_as<Address>(gamedata.GetOffset("studiohdr_t::numtextures"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numtextures' offset.");
 		}
 
 		// [offset] studiohdr_t::textureindex
-		if ((this.textureindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::textureindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.textureindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::textureindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::textureindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numcdtextures
-		if ((this.numcdtextures = view_as<Address>(gamedata.GetOffset("studiohdr_t::numcdtextures"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numcdtextures = view_as<Address>(gamedata.GetOffset("studiohdr_t::numcdtextures"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numcdtextures' offset.");
 		}
 
 		// [offset] studiohdr_t::cdtextureindex
-		if ((this.cdtextureindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::cdtextureindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.cdtextureindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::cdtextureindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::cdtextureindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numskinref
-		if ((this.numskinref = view_as<Address>(gamedata.GetOffset("studiohdr_t::numskinref"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numskinref = view_as<Address>(gamedata.GetOffset("studiohdr_t::numskinref"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numskinref' offset.");
 		}
 
 		// [offset] studiohdr_t::numskinfamilies
-		if ((this.numskinfamilies = view_as<Address>(gamedata.GetOffset("studiohdr_t::numskinfamilies"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numskinfamilies = view_as<Address>(gamedata.GetOffset("studiohdr_t::numskinfamilies"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numskinfamilies' offset.");
 		}
 
 		// [offset] studiohdr_t::skinindex
-		if ((this.skinindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::skinindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.skinindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::skinindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::skinindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numbodyparts
-		if ((this.numbodyparts = view_as<Address>(gamedata.GetOffset("studiohdr_t::numbodyparts"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numbodyparts = view_as<Address>(gamedata.GetOffset("studiohdr_t::numbodyparts"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numbodyparts' offset.");
 		}
 
 		// [offset] studiohdr_t::bodypartindex
-		if ((this.bodypartindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::bodypartindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bodypartindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::bodypartindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::bodypartindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numlocalattachments
-		if ((this.numlocalattachments = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalattachments"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numlocalattachments = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalattachments"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numlocalattachments' offset.");
 		}
 
 		// [offset] studiohdr_t::localattachmentindex
-		if ((this.localattachmentindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localattachmentindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localattachmentindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localattachmentindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::localattachmentindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numlocalnodes
-		if ((this.numlocalnodes = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalnodes"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numlocalnodes = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalnodes"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numlocalnodes' offset.");
 		}
 
 		// [offset] studiohdr_t::localnodeindex
-		if ((this.localnodeindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localnodeindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localnodeindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localnodeindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::localnodeindex' offset.");
 		}
 
 		// [offset] studiohdr_t::localnodenameindex
-		if ((this.localnodenameindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localnodenameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localnodenameindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localnodenameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::localnodenameindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numflexdesc
-		if ((this.numflexdesc = view_as<Address>(gamedata.GetOffset("studiohdr_t::numflexdesc"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numflexdesc = view_as<Address>(gamedata.GetOffset("studiohdr_t::numflexdesc"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numflexdesc' offset.");
 		}
 
 		// [offset] studiohdr_t::flexdescindex
-		if ((this.flexdescindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::flexdescindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flexdescindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::flexdescindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::flexdescindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numflexcontrollers
-		if ((this.numflexcontrollers = view_as<Address>(gamedata.GetOffset("studiohdr_t::numflexcontrollers"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numflexcontrollers = view_as<Address>(gamedata.GetOffset("studiohdr_t::numflexcontrollers"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numflexcontrollers' offset.");
 		}
 
 		// [offset] studiohdr_t::flexcontrollerindex
-		if ((this.flexcontrollerindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::flexcontrollerindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flexcontrollerindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::flexcontrollerindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::flexcontrollerindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numflexrules
-		if ((this.numflexrules = view_as<Address>(gamedata.GetOffset("studiohdr_t::numflexrules"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numflexrules = view_as<Address>(gamedata.GetOffset("studiohdr_t::numflexrules"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numflexrules' offset.");
 		}
 
 		// [offset] studiohdr_t::flexruleindex
-		if ((this.flexruleindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::flexruleindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flexruleindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::flexruleindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::flexruleindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numikchains
-		if ((this.numikchains = view_as<Address>(gamedata.GetOffset("studiohdr_t::numikchains"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numikchains = view_as<Address>(gamedata.GetOffset("studiohdr_t::numikchains"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numikchains' offset.");
 		}
 
 		// [offset] studiohdr_t::ikchainindex
-		if ((this.ikchainindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::ikchainindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.ikchainindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::ikchainindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::ikchainindex' offset.");
 		}
 
 		// [offset] studiohdr_t::nummouths
-		if ((this.nummouths = view_as<Address>(gamedata.GetOffset("studiohdr_t::nummouths"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.nummouths = view_as<Address>(gamedata.GetOffset("studiohdr_t::nummouths"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::nummouths' offset.");
 		}
 
 		// [offset] studiohdr_t::mouthindex
-		if ((this.mouthindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::mouthindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.mouthindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::mouthindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::mouthindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numlocalposeparameters
-		if ((this.numlocalposeparameters = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalposeparameters"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numlocalposeparameters = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalposeparameters"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numlocalposeparameters' offset.");
 		}
 
 		// [offset] studiohdr_t::localposeparamindex
-		if ((this.localposeparamindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localposeparamindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localposeparamindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localposeparamindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::localposeparamindex' offset.");
 		}
 
 		// [offset] studiohdr_t::surfacepropindex
-		if ((this.surfacepropindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::surfacepropindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.surfacepropindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::surfacepropindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::surfacepropindex' offset.");
 		}
 
 		// [offset] studiohdr_t::keyvalueindex
-		if ((this.keyvalueindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::keyvalueindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.keyvalueindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::keyvalueindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::keyvalueindex' offset.");
 		}
 
 		// [offset] studiohdr_t::keyvaluesize
-		if ((this.keyvaluesize = view_as<Address>(gamedata.GetOffset("studiohdr_t::keyvaluesize"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.keyvaluesize = view_as<Address>(gamedata.GetOffset("studiohdr_t::keyvaluesize"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::keyvaluesize' offset.");
 		}
 
 		// [offset] studiohdr_t::numlocalikautoplaylocks
-		if ((this.numlocalikautoplaylocks = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalikautoplaylocks"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numlocalikautoplaylocks = view_as<Address>(gamedata.GetOffset("studiohdr_t::numlocalikautoplaylocks"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numlocalikautoplaylocks' offset.");
 		}
 
 		// [offset] studiohdr_t::localikautoplaylockindex
-		if ((this.localikautoplaylockindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localikautoplaylockindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localikautoplaylockindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::localikautoplaylockindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::localikautoplaylockindex' offset.");
 		}
 
 		// [offset] studiohdr_t::mass
-		if ((this.mass = view_as<Address>(gamedata.GetOffset("studiohdr_t::mass"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.mass = view_as<Address>(gamedata.GetOffset("studiohdr_t::mass"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::mass' offset.");
 		}
 
 		// [offset] studiohdr_t::contents
-		if ((this.contents = view_as<Address>(gamedata.GetOffset("studiohdr_t::contents"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.contents = view_as<Address>(gamedata.GetOffset("studiohdr_t::contents"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::contents' offset.");
 		}
 
 		// [offset] studiohdr_t::numincludemodels
-		if ((this.numincludemodels = view_as<Address>(gamedata.GetOffset("studiohdr_t::numincludemodels"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numincludemodels = view_as<Address>(gamedata.GetOffset("studiohdr_t::numincludemodels"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numincludemodels' offset.");
 		}
 
 		// [offset] studiohdr_t::includemodelindex
-		if ((this.includemodelindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::includemodelindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.includemodelindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::includemodelindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::includemodelindex' offset.");
 		}
 
 		// [offset] studiohdr_t::szanimblocknameindex
-		if ((this.szanimblocknameindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::szanimblocknameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szanimblocknameindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::szanimblocknameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::szanimblocknameindex' offset.");
 		}
 
 		// [offset] studiohdr_t::numanimblocks
-		if ((this.numanimblocks = view_as<Address>(gamedata.GetOffset("studiohdr_t::numanimblocks"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numanimblocks = view_as<Address>(gamedata.GetOffset("studiohdr_t::numanimblocks"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numanimblocks' offset.");
 		}
 
 		// [offset] studiohdr_t::animblockindex
-		if ((this.animblockindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::animblockindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.animblockindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::animblockindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::animblockindex' offset.");
 		}
 
 		// [offset] studiohdr_t::bonetablebynameindex
-		if ((this.bonetablebynameindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::bonetablebynameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bonetablebynameindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::bonetablebynameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::bonetablebynameindex' offset.");
 		}
 
 		// [offset] studiohdr_t::constdirectionallightdot
-		if ((this.constdirectionallightdot = view_as<Address>(gamedata.GetOffset("studiohdr_t::constdirectionallightdot"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.constdirectionallightdot = view_as<Address>(gamedata.GetOffset("studiohdr_t::constdirectionallightdot"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::constdirectionallightdot' offset.");
 		}
 
 		// [offset] studiohdr_t::rootLOD
-		if ((this.rootLOD = view_as<Address>(gamedata.GetOffset("studiohdr_t::rootLOD"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.rootLOD = view_as<Address>(gamedata.GetOffset("studiohdr_t::rootLOD"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::rootLOD' offset.");
 		}
 
 		// [offset] studiohdr_t::numAllowedRootLODs
-		if ((this.numAllowedRootLODs = view_as<Address>(gamedata.GetOffset("studiohdr_t::numAllowedRootLODs"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numAllowedRootLODs = view_as<Address>(gamedata.GetOffset("studiohdr_t::numAllowedRootLODs"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numAllowedRootLODs' offset.");
 		}
 
 		// [offset] studiohdr_t::numflexcontrollerui
-		if ((this.numflexcontrollerui = view_as<Address>(gamedata.GetOffset("studiohdr_t::numflexcontrollerui"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numflexcontrollerui = view_as<Address>(gamedata.GetOffset("studiohdr_t::numflexcontrollerui"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::numflexcontrollerui' offset.");
 		}
 
 		// [offset] studiohdr_t::flexcontrolleruiindex
-		if ((this.flexcontrolleruiindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::flexcontrolleruiindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flexcontrolleruiindex = view_as<Address>(gamedata.GetOffset("studiohdr_t::flexcontrolleruiindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::flexcontrolleruiindex' offset.");
 		}
 
 		// [offset] studiohdr_t::flVertAnimFixedPointScale
-		if ((this.flVertAnimFixedPointScale = view_as<Address>(gamedata.GetOffset("studiohdr_t::flVertAnimFixedPointScale"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flVertAnimFixedPointScale = view_as<Address>(gamedata.GetOffset("studiohdr_t::flVertAnimFixedPointScale"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::flVertAnimFixedPointScale' offset.");
 		}
 
 		// [offset] studiohdr_t::surfacepropLookup
-		if ((this.surfacepropLookup = view_as<Address>(gamedata.GetOffset("studiohdr_t::surfacepropLookup"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.surfacepropLookup = view_as<Address>(gamedata.GetOffset("studiohdr_t::surfacepropLookup"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::surfacepropLookup' offset.");
 		}
 
 		// [offset] studiohdr_t::studiohdr2index
-		if ((this.studiohdr2index = view_as<Address>(gamedata.GetOffset("studiohdr_t::studiohdr2index"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.studiohdr2index = view_as<Address>(gamedata.GetOffset("studiohdr_t::studiohdr2index"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 			SetFailState("Failed to get 'studiohdr_t::studiohdr2index' offset.");
 		}
@@ -562,103 +561,103 @@ enum struct mstudiobone_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudiobone_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiobone_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiobone_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudiobone_t::parent
-		if ((this.parent = view_as<Address>(gamedata.GetOffset("mstudiobone_t::parent"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.parent = view_as<Address>(gamedata.GetOffset("mstudiobone_t::parent"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::parent' offset.");
 		}
 
 		// [offset] mstudiobone_t::bonecontroller
-		if ((this.bonecontroller = view_as<Address>(gamedata.GetOffset("mstudiobone_t::bonecontroller"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bonecontroller = view_as<Address>(gamedata.GetOffset("mstudiobone_t::bonecontroller"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::bonecontroller' offset.");
 		}
 
 		// [offset] mstudiobone_t::pos
-		if ((this.pos = view_as<Address>(gamedata.GetOffset("mstudiobone_t::pos"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.pos = view_as<Address>(gamedata.GetOffset("mstudiobone_t::pos"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::pos' offset.");
 		}
 
 		// [offset] mstudiobone_t::quat
-		if ((this.quat = view_as<Address>(gamedata.GetOffset("mstudiobone_t::quat"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.quat = view_as<Address>(gamedata.GetOffset("mstudiobone_t::quat"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::quat' offset.");
 		}
 
 		// [offset] mstudiobone_t::rot
-		if ((this.rot = view_as<Address>(gamedata.GetOffset("mstudiobone_t::rot"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.rot = view_as<Address>(gamedata.GetOffset("mstudiobone_t::rot"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::rot' offset.");
 		}
 
 		// [offset] mstudiobone_t::posscale
-		if ((this.posscale = view_as<Address>(gamedata.GetOffset("mstudiobone_t::posscale"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.posscale = view_as<Address>(gamedata.GetOffset("mstudiobone_t::posscale"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::posscale' offset.");
 		}
 
 		// [offset] mstudiobone_t::rotscale
-		if ((this.rotscale = view_as<Address>(gamedata.GetOffset("mstudiobone_t::rotscale"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.rotscale = view_as<Address>(gamedata.GetOffset("mstudiobone_t::rotscale"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::rotscale' offset.");
 		}
 
 		// [offset] mstudiobone_t::poseToBone
-		if ((this.poseToBone = view_as<Address>(gamedata.GetOffset("mstudiobone_t::poseToBone"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.poseToBone = view_as<Address>(gamedata.GetOffset("mstudiobone_t::poseToBone"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::poseToBone' offset.");
 		}
 
 		// [offset] mstudiobone_t::qAlignment
-		if ((this.qAlignment = view_as<Address>(gamedata.GetOffset("mstudiobone_t::qAlignment"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.qAlignment = view_as<Address>(gamedata.GetOffset("mstudiobone_t::qAlignment"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::qAlignment' offset.");
 		}
 
 		// [offset] mstudiobone_t::flags
-		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudiobone_t::flags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudiobone_t::flags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::flags' offset.");
 		}
 
 		// [offset] mstudiobone_t::proctype
-		if ((this.proctype = view_as<Address>(gamedata.GetOffset("mstudiobone_t::proctype"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.proctype = view_as<Address>(gamedata.GetOffset("mstudiobone_t::proctype"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::proctype' offset.");
 		}
 
 		// [offset] mstudiobone_t::procindex
-		if ((this.procindex = view_as<Address>(gamedata.GetOffset("mstudiobone_t::procindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.procindex = view_as<Address>(gamedata.GetOffset("mstudiobone_t::procindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::procindex' offset.");
 		}
 
 		// [offset] mstudiobone_t::physicsbone
-		if ((this.physicsbone = view_as<Address>(gamedata.GetOffset("mstudiobone_t::physicsbone"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.physicsbone = view_as<Address>(gamedata.GetOffset("mstudiobone_t::physicsbone"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::physicsbone' offset.");
 		}
 
 		// [offset] mstudiobone_t::surfacepropidx
-		if ((this.surfacepropidx = view_as<Address>(gamedata.GetOffset("mstudiobone_t::surfacepropidx"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.surfacepropidx = view_as<Address>(gamedata.GetOffset("mstudiobone_t::surfacepropidx"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::surfacepropidx' offset.");
 		}
 
 		// [offset] mstudiobone_t::contents
-		if ((this.contents = view_as<Address>(gamedata.GetOffset("mstudiobone_t::contents"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.contents = view_as<Address>(gamedata.GetOffset("mstudiobone_t::contents"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::contents' offset.");
 		}
 
 		// [offset] mstudiobone_t::surfacepropLookup
-		if ((this.surfacepropLookup = view_as<Address>(gamedata.GetOffset("mstudiobone_t::surfacepropLookup"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.surfacepropLookup = view_as<Address>(gamedata.GetOffset("mstudiobone_t::surfacepropLookup"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobone_t::surfacepropLookup' offset.");
 		}
@@ -684,37 +683,37 @@ enum struct mstudiobonecontroller_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudiobonecontroller_t::bone
-		if ((this.bone = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::bone"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bone = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::bone"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobonecontroller_t::bone' offset.");
 		}
 
 		// [offset] mstudiobonecontroller_t::type
-		if ((this.type = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::type"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.type = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::type"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobonecontroller_t::type' offset.");
 		}
 
 		// [offset] mstudiobonecontroller_t::start
-		if ((this.start = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::start"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.start = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::start"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobonecontroller_t::start' offset.");
 		}
 
 		// [offset] mstudiobonecontroller_t::end
-		if ((this.end = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::end"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.end = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::end"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobonecontroller_t::end' offset.");
 		}
 
 		// [offset] mstudiobonecontroller_t::rest
-		if ((this.rest = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::rest"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.rest = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::rest"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobonecontroller_t::rest' offset.");
 		}
 
 		// [offset] mstudiobonecontroller_t::inputfield
-		if ((this.inputfield = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::inputfield"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.inputfield = view_as<Address>(gamedata.GetOffset("mstudiobonecontroller_t::inputfield"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobonecontroller_t::inputfield' offset.");
 		}
@@ -737,19 +736,19 @@ enum struct mstudiohitboxset_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudiohitboxset_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiohitboxset_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiohitboxset_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiohitboxset_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudiohitboxset_t::numhitboxes
-		if ((this.numhitboxes = view_as<Address>(gamedata.GetOffset("mstudiohitboxset_t::numhitboxes"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numhitboxes = view_as<Address>(gamedata.GetOffset("mstudiohitboxset_t::numhitboxes"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiohitboxset_t::numhitboxes' offset.");
 		}
 
 		// [offset] mstudiohitboxset_t::hitboxindex
-		if ((this.hitboxindex = view_as<Address>(gamedata.GetOffset("mstudiohitboxset_t::hitboxindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.hitboxindex = view_as<Address>(gamedata.GetOffset("mstudiohitboxset_t::hitboxindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiohitboxset_t::hitboxindex' offset.");
 		}
@@ -776,43 +775,43 @@ enum struct mstudiobbox_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudiobbox_t::bone
-		if ((this.bone = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::bone"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bone = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::bone"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobbox_t::bone' offset.");
 		}
 
 		// [offset] mstudiobbox_t::group
-		if ((this.group = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::group"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.group = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::group"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobbox_t::group' offset.");
 		}
 
 		// [offset] mstudiobbox_t::bbmin
-		if ((this.bbmin = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::bbmin"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bbmin = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::bbmin"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobbox_t::bbmin' offset.");
 		}
 
 		// [offset] mstudiobbox_t::bbmax
-		if ((this.bbmax = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::bbmax"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bbmax = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::bbmax"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobbox_t::bbmax' offset.");
 		}
 
 		// [offset] mstudiobbox_t::szhitboxnameindex
-		if ((this.szhitboxnameindex = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::szhitboxnameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szhitboxnameindex = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::szhitboxnameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobbox_t::szhitboxnameindex' offset.");
 		}
 
 		// [offset] mstudiobbox_t::angOffsetOrientation
-		if ((this.angOffsetOrientation = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::angOffsetOrientation"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.angOffsetOrientation = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::angOffsetOrientation"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobbox_t::angOffsetOrientation' offset.");
 		}
 
 		// [offset] mstudiobbox_t::flCapsuleRadius
-		if ((this.flCapsuleRadius = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::flCapsuleRadius"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flCapsuleRadius = view_as<Address>(gamedata.GetOffset("mstudiobbox_t::flCapsuleRadius"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobbox_t::flCapsuleRadius' offset.");
 		}
@@ -853,127 +852,127 @@ enum struct mstudioanimdesc_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioanimdesc_t::baseptr
-		if ((this.baseptr = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::baseptr"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.baseptr = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::baseptr"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::baseptr' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::fps
-		if ((this.fps = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::fps"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.fps = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::fps"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::fps' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::flags
-		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::flags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::flags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::flags' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::numframes
-		if ((this.numframes = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::numframes"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numframes = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::numframes"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::numframes' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::nummovements
-		if ((this.nummovements = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::nummovements"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.nummovements = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::nummovements"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::nummovements' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::movementindex
-		if ((this.movementindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::movementindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.movementindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::movementindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::movementindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::ikrulezeroframeindex
-		if ((this.ikrulezeroframeindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::ikrulezeroframeindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.ikrulezeroframeindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::ikrulezeroframeindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::ikrulezeroframeindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::animblock
-		if ((this.animblock = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::animblock"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.animblock = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::animblock"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::animblock' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::animindex
-		if ((this.animindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::animindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.animindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::animindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::animindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::numikrules
-		if ((this.numikrules = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::numikrules"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numikrules = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::numikrules"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::numikrules' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::ikruleindex
-		if ((this.ikruleindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::ikruleindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.ikruleindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::ikruleindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::ikruleindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::animblockikruleindex
-		if ((this.animblockikruleindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::animblockikruleindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.animblockikruleindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::animblockikruleindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::animblockikruleindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::numlocalhierarchy
-		if ((this.numlocalhierarchy = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::numlocalhierarchy"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numlocalhierarchy = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::numlocalhierarchy"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::numlocalhierarchy' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::localhierarchyindex
-		if ((this.localhierarchyindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::localhierarchyindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localhierarchyindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::localhierarchyindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::localhierarchyindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::sectionindex
-		if ((this.sectionindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::sectionindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sectionindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::sectionindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::sectionindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::sectionframes
-		if ((this.sectionframes = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::sectionframes"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sectionframes = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::sectionframes"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::sectionframes' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::zeroframespan
-		if ((this.zeroframespan = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::zeroframespan"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.zeroframespan = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::zeroframespan"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::zeroframespan' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::zeroframecount
-		if ((this.zeroframecount = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::zeroframecount"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.zeroframecount = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::zeroframecount"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::zeroframecount' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::zeroframeindex
-		if ((this.zeroframeindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::zeroframeindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.zeroframeindex = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::zeroframeindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::zeroframeindex' offset.");
 		}
 
 		// [offset] mstudioanimdesc_t::zeroframestalltime
-		if ((this.zeroframestalltime = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::zeroframestalltime"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.zeroframestalltime = view_as<Address>(gamedata.GetOffset("mstudioanimdesc_t::zeroframestalltime"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimdesc_t::zeroframestalltime' offset.");
 		}
@@ -997,25 +996,25 @@ enum struct mstudioiklock_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioiklock_t::chain
-		if ((this.chain = view_as<Address>(gamedata.GetOffset("mstudioiklock_t::chain"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.chain = view_as<Address>(gamedata.GetOffset("mstudioiklock_t::chain"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioiklock_t::chain' offset.");
 		}
 
 		// [offset] mstudioiklock_t::flPosWeight
-		if ((this.flPosWeight = view_as<Address>(gamedata.GetOffset("mstudioiklock_t::flPosWeight"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flPosWeight = view_as<Address>(gamedata.GetOffset("mstudioiklock_t::flPosWeight"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioiklock_t::flPosWeight' offset.");
 		}
 
 		// [offset] mstudioiklock_t::flLocalQWeight
-		if ((this.flLocalQWeight = view_as<Address>(gamedata.GetOffset("mstudioiklock_t::flLocalQWeight"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flLocalQWeight = view_as<Address>(gamedata.GetOffset("mstudioiklock_t::flLocalQWeight"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioiklock_t::flLocalQWeight' offset.");
 		}
 
 		// [offset] mstudioiklock_t::flags
-		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioiklock_t::flags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioiklock_t::flags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioiklock_t::flags' offset.");
 		}
@@ -1078,259 +1077,259 @@ enum struct mstudioseqdesc_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioseqdesc_t::baseptr
-		if ((this.baseptr = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::baseptr"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.baseptr = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::baseptr"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::baseptr' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::szlabelindex
-		if ((this.szlabelindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::szlabelindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szlabelindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::szlabelindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::szlabelindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::szactivitynameindex
-		if ((this.szactivitynameindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::szactivitynameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szactivitynameindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::szactivitynameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::szactivitynameindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::flags
-		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::flags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::flags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::flags' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::activity
-		if ((this.activity = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::activity"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.activity = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::activity"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::activity' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::actweight
-		if ((this.actweight = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::actweight"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.actweight = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::actweight"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::actweight' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::numevents
-		if ((this.numevents = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numevents"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numevents = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numevents"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::numevents' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::eventindex
-		if ((this.eventindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::eventindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.eventindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::eventindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::eventindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::bbmin
-		if ((this.bbmin = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::bbmin"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bbmin = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::bbmin"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::bbmin' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::bbmax
-		if ((this.bbmax = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::bbmax"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bbmax = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::bbmax"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::bbmax' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::numblends
-		if ((this.numblends = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numblends"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numblends = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numblends"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::numblends' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::animindexindex
-		if ((this.animindexindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::animindexindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.animindexindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::animindexindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::animindexindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::movementindex
-		if ((this.movementindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::movementindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.movementindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::movementindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::movementindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::groupsize
-		if ((this.groupsize = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::groupsize"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.groupsize = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::groupsize"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::groupsize' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::paramindex
-		if ((this.paramindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::paramindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.paramindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::paramindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::paramindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::paramstart
-		if ((this.paramstart = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::paramstart"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.paramstart = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::paramstart"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::paramstart' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::paramend
-		if ((this.paramend = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::paramend"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.paramend = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::paramend"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::paramend' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::paramparent
-		if ((this.paramparent = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::paramparent"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.paramparent = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::paramparent"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::paramparent' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::fadeintime
-		if ((this.fadeintime = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::fadeintime"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.fadeintime = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::fadeintime"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::fadeintime' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::fadeouttime
-		if ((this.fadeouttime = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::fadeouttime"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.fadeouttime = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::fadeouttime"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::fadeouttime' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::localentrynode
-		if ((this.localentrynode = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::localentrynode"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localentrynode = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::localentrynode"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::localentrynode' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::localexitnode
-		if ((this.localexitnode = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::localexitnode"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localexitnode = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::localexitnode"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::localexitnode' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::nodeflags
-		if ((this.nodeflags = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::nodeflags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.nodeflags = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::nodeflags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::nodeflags' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::entryphase
-		if ((this.entryphase = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::entryphase"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.entryphase = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::entryphase"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::entryphase' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::exitphase
-		if ((this.exitphase = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::exitphase"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.exitphase = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::exitphase"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::exitphase' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::lastframe
-		if ((this.lastframe = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::lastframe"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.lastframe = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::lastframe"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::lastframe' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::nextseq
-		if ((this.nextseq = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::nextseq"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.nextseq = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::nextseq"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::nextseq' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::pose
-		if ((this.pose = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::pose"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.pose = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::pose"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::pose' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::numikrules
-		if ((this.numikrules = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numikrules"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numikrules = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numikrules"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::numikrules' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::numautolayers
-		if ((this.numautolayers = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numautolayers"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numautolayers = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numautolayers"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::numautolayers' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::autolayerindex
-		if ((this.autolayerindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::autolayerindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.autolayerindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::autolayerindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::autolayerindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::weightlistindex
-		if ((this.weightlistindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::weightlistindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.weightlistindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::weightlistindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::weightlistindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::posekeyindex
-		if ((this.posekeyindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::posekeyindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.posekeyindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::posekeyindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::posekeyindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::numiklocks
-		if ((this.numiklocks = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numiklocks"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numiklocks = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numiklocks"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::numiklocks' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::iklockindex
-		if ((this.iklockindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::iklockindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.iklockindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::iklockindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::iklockindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::keyvalueindex
-		if ((this.keyvalueindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::keyvalueindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.keyvalueindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::keyvalueindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::keyvalueindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::keyvaluesize
-		if ((this.keyvaluesize = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::keyvaluesize"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.keyvaluesize = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::keyvaluesize"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::keyvaluesize' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::cycleposeindex
-		if ((this.cycleposeindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::cycleposeindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.cycleposeindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::cycleposeindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::cycleposeindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::activitymodifierindex
-		if ((this.activitymodifierindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::activitymodifierindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.activitymodifierindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::activitymodifierindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::activitymodifierindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::numactivitymodifiers
-		if ((this.numactivitymodifiers = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numactivitymodifiers"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numactivitymodifiers = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numactivitymodifiers"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::numactivitymodifiers' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::animtagindex
-		if ((this.animtagindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::animtagindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.animtagindex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::animtagindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::animtagindex' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::numanimtags
-		if ((this.numanimtags = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numanimtags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numanimtags = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::numanimtags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::numanimtags' offset.");
 		}
 
 		// [offset] mstudioseqdesc_t::rootDriverIndex
-		if ((this.rootDriverIndex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::rootDriverIndex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.rootDriverIndex = view_as<Address>(gamedata.GetOffset("mstudioseqdesc_t::rootDriverIndex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioseqdesc_t::rootDriverIndex' offset.");
 		}
@@ -1354,25 +1353,25 @@ enum struct mstudiobodyparts_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudiobodyparts_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiobodyparts_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiobodyparts_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobodyparts_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudiobodyparts_t::nummodels
-		if ((this.nummodels = view_as<Address>(gamedata.GetOffset("mstudiobodyparts_t::nummodels"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.nummodels = view_as<Address>(gamedata.GetOffset("mstudiobodyparts_t::nummodels"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobodyparts_t::nummodels' offset.");
 		}
 
 		// [offset] mstudiobodyparts_t::base
-		if ((this.base = view_as<Address>(gamedata.GetOffset("mstudiobodyparts_t::base"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.base = view_as<Address>(gamedata.GetOffset("mstudiobodyparts_t::base"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobodyparts_t::base' offset.");
 		}
 
 		// [offset] mstudiobodyparts_t::modelindex
-		if ((this.modelindex = view_as<Address>(gamedata.GetOffset("mstudiobodyparts_t::modelindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.modelindex = view_as<Address>(gamedata.GetOffset("mstudiobodyparts_t::modelindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiobodyparts_t::modelindex' offset.");
 		}
@@ -1396,25 +1395,25 @@ enum struct mstudioattachment_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioattachment_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioattachment_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioattachment_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioattachment_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudioattachment_t::flags
-		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioattachment_t::flags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioattachment_t::flags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioattachment_t::flags' offset.");
 		}
 
 		// [offset] mstudioattachment_t::localbone
-		if ((this.localbone = view_as<Address>(gamedata.GetOffset("mstudioattachment_t::localbone"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localbone = view_as<Address>(gamedata.GetOffset("mstudioattachment_t::localbone"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioattachment_t::localbone' offset.");
 		}
 
 		// [offset] mstudioattachment_t::local
-		if ((this.local = view_as<Address>(gamedata.GetOffset("mstudioattachment_t::local"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.local = view_as<Address>(gamedata.GetOffset("mstudioattachment_t::local"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioattachment_t::local' offset.");
 		}
@@ -1435,7 +1434,7 @@ enum struct mstudioflexdesc_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioflexdesc_t::szFACSindex
-		if ((this.szFACSindex = view_as<Address>(gamedata.GetOffset("mstudioflexdesc_t::szFACSindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szFACSindex = view_as<Address>(gamedata.GetOffset("mstudioflexdesc_t::szFACSindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexdesc_t::szFACSindex' offset.");
 		}
@@ -1460,31 +1459,31 @@ enum struct mstudioflexcontroller_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioflexcontroller_t::sztypeindex
-		if ((this.sztypeindex = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::sztypeindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sztypeindex = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::sztypeindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontroller_t::sztypeindex' offset.");
 		}
 
 		// [offset] mstudioflexcontroller_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontroller_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudioflexcontroller_t::localToGlobal
-		if ((this.localToGlobal = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::localToGlobal"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.localToGlobal = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::localToGlobal"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontroller_t::localToGlobal' offset.");
 		}
 
 		// [offset] mstudioflexcontroller_t::min
-		if ((this.min = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::min"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.min = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::min"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontroller_t::min' offset.");
 		}
 
 		// [offset] mstudioflexcontroller_t::max
-		if ((this.max = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::max"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.max = view_as<Address>(gamedata.GetOffset("mstudioflexcontroller_t::max"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontroller_t::max' offset.");
 		}
@@ -1507,19 +1506,19 @@ enum struct mstudioflexrule_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioflexrule_t::flex
-		if ((this.flex = view_as<Address>(gamedata.GetOffset("mstudioflexrule_t::flex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flex = view_as<Address>(gamedata.GetOffset("mstudioflexrule_t::flex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexrule_t::flex' offset.");
 		}
 
 		// [offset] mstudioflexrule_t::numops
-		if ((this.numops = view_as<Address>(gamedata.GetOffset("mstudioflexrule_t::numops"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numops = view_as<Address>(gamedata.GetOffset("mstudioflexrule_t::numops"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexrule_t::numops' offset.");
 		}
 
 		// [offset] mstudioflexrule_t::opindex
-		if ((this.opindex = view_as<Address>(gamedata.GetOffset("mstudioflexrule_t::opindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.opindex = view_as<Address>(gamedata.GetOffset("mstudioflexrule_t::opindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexrule_t::opindex' offset.");
 		}
@@ -1543,25 +1542,25 @@ enum struct mstudioikchain_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioikchain_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioikchain_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioikchain_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioikchain_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudioikchain_t::linktype
-		if ((this.linktype = view_as<Address>(gamedata.GetOffset("mstudioikchain_t::linktype"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.linktype = view_as<Address>(gamedata.GetOffset("mstudioikchain_t::linktype"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioikchain_t::linktype' offset.");
 		}
 
 		// [offset] mstudioikchain_t::numlinks
-		if ((this.numlinks = view_as<Address>(gamedata.GetOffset("mstudioikchain_t::numlinks"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.numlinks = view_as<Address>(gamedata.GetOffset("mstudioikchain_t::numlinks"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioikchain_t::numlinks' offset.");
 		}
 
 		// [offset] mstudioikchain_t::linkindex
-		if ((this.linkindex = view_as<Address>(gamedata.GetOffset("mstudioikchain_t::linkindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.linkindex = view_as<Address>(gamedata.GetOffset("mstudioikchain_t::linkindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioikchain_t::linkindex' offset.");
 		}
@@ -1584,19 +1583,19 @@ enum struct mstudiomouth_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudiomouth_t::bone
-		if ((this.bone = view_as<Address>(gamedata.GetOffset("mstudiomouth_t::bone"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.bone = view_as<Address>(gamedata.GetOffset("mstudiomouth_t::bone"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiomouth_t::bone' offset.");
 		}
 
 		// [offset] mstudiomouth_t::forward
-		if ((this._forward = view_as<Address>(gamedata.GetOffset("mstudiomouth_t::forward"))) == INVALID_ADDRESS_OFFSET)
+		if ((this._forward = view_as<Address>(gamedata.GetOffset("mstudiomouth_t::forward"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiomouth_t::forward' offset.");
 		}
 
 		// [offset] mstudiomouth_t::flexdesc
-		if ((this.flexdesc = view_as<Address>(gamedata.GetOffset("mstudiomouth_t::flexdesc"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flexdesc = view_as<Address>(gamedata.GetOffset("mstudiomouth_t::flexdesc"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiomouth_t::flexdesc' offset.");
 		}
@@ -1621,31 +1620,31 @@ enum struct mstudioposeparamdesc_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioposeparamdesc_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioposeparamdesc_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudioposeparamdesc_t::flags
-		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::flags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::flags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioposeparamdesc_t::flags' offset.");
 		}
 
 		// [offset] mstudioposeparamdesc_t::start
-		if ((this.start = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::start"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.start = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::start"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioposeparamdesc_t::start' offset.");
 		}
 
 		// [offset] mstudioposeparamdesc_t::end
-		if ((this.end = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::end"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.end = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::end"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioposeparamdesc_t::end' offset.");
 		}
 
 		// [offset] mstudioposeparamdesc_t::loop
-		if ((this.loop = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::loop"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.loop = view_as<Address>(gamedata.GetOffset("mstudioposeparamdesc_t::loop"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioposeparamdesc_t::loop' offset.");
 		}
@@ -1667,13 +1666,13 @@ enum struct mstudiomodelgroup_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudiomodelgroup_t::szlabelindex
-		if ((this.szlabelindex = view_as<Address>(gamedata.GetOffset("mstudiomodelgroup_t::szlabelindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szlabelindex = view_as<Address>(gamedata.GetOffset("mstudiomodelgroup_t::szlabelindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiomodelgroup_t::szlabelindex' offset.");
 		}
 
 		// [offset] mstudiomodelgroup_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiomodelgroup_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiomodelgroup_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiomodelgroup_t::sznameindex' offset.");
 		}
@@ -1695,13 +1694,13 @@ enum struct mstudioanimblock_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioanimblock_t::datastart
-		if ((this.datastart = view_as<Address>(gamedata.GetOffset("mstudioanimblock_t::datastart"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.datastart = view_as<Address>(gamedata.GetOffset("mstudioanimblock_t::datastart"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimblock_t::datastart' offset.");
 		}
 
 		// [offset] mstudioanimblock_t::dataend
-		if ((this.dataend = view_as<Address>(gamedata.GetOffset("mstudioanimblock_t::dataend"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.dataend = view_as<Address>(gamedata.GetOffset("mstudioanimblock_t::dataend"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioanimblock_t::dataend' offset.");
 		}
@@ -1726,31 +1725,31 @@ enum struct mstudioflexcontrollerui_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudioflexcontrollerui_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontrollerui_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudioflexcontrollerui_t::szindex0
-		if ((this.szindex0 = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::szindex0"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szindex0 = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::szindex0"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontrollerui_t::szindex0' offset.");
 		}
 
 		// [offset] mstudioflexcontrollerui_t::szindex1
-		if ((this.szindex1 = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::szindex1"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szindex1 = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::szindex1"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontrollerui_t::szindex1' offset.");
 		}
 
 		// [offset] mstudioflexcontrollerui_t::szindex2
-		if ((this.szindex2 = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::szindex2"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.szindex2 = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::szindex2"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontrollerui_t::szindex2' offset.");
 		}
 
 		// [offset] mstudioflexcontrollerui_t::remaptype
-		if ((this.remaptype = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::remaptype"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.remaptype = view_as<Address>(gamedata.GetOffset("mstudioflexcontrollerui_t::remaptype"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudioflexcontrollerui_t::remaptype' offset.");
 		}
@@ -1772,13 +1771,13 @@ enum struct mstudiotexture_t
 	void LoadOffsets(GameData gamedata)
 	{
 		// [offset] mstudiotexture_t::sznameindex
-		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiotexture_t::sznameindex"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.sznameindex = view_as<Address>(gamedata.GetOffset("mstudiotexture_t::sznameindex"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiotexture_t::sznameindex' offset.");
 		}
 
 		// [offset] mstudiotexture_t::flags
-		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudiotexture_t::flags"))) == INVALID_ADDRESS_OFFSET)
+		if ((this.flags = view_as<Address>(gamedata.GetOffset("mstudiotexture_t::flags"))) == STUDIOHDR_INVALID_OFFSET)
 		{
 		    SetFailState("Failed to get 'mstudiotexture_t::flags' offset.");
 		}
@@ -1792,7 +1791,7 @@ enum struct mstudiotexture_t
 }
 
 // Hold all offsets
-enum struct Offsets
+enum struct StudioHdrOffsets
 {
 	// StudioHdr
 	studiohdr_t studiohdr_t;
@@ -1859,28 +1858,35 @@ enum struct Offsets
 		this.mstudiotexture_t.LoadOffsets(gamedata);
 	}
 }
-Offsets g_Offsets;
+
+static StudioHdrOffsets g_Offsets;
 
 // Object that represents an address.
-methodmap AddressObject
+methodmap StudioHdrAddressObject
 {
-	// Make sure the this address is not 0.
+	property bool valid
+	{
+		public get()
+		{
+			return view_as<Address>(this) != Address_Null;
+		}
+	}
+	
 	public void Validate()
 	{
-		if (view_as<Address>(this) == Address_Null)
+		if (!this.valid)
 		{
 			ThrowError("Invalid Object.");
 		}
 	}
+
+	public static any Invalid()
+	{
+		return Address_Null;
+	}
 }
 
-// Bone //
-enum Bone
-{
-	NULL_BONE
-}
-
-methodmap Bone < AddressObject
+methodmap Bone < StudioHdrAddressObject
 {
 	public Bone(Address base, int index)
 	{
@@ -1902,7 +1908,7 @@ methodmap Bone < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int parent
@@ -1920,66 +1926,65 @@ methodmap Bone < AddressObject
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.bonecontroller, bonecontroller, sizeof(bonecontroller));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.bonecontroller, bonecontroller, sizeof(bonecontroller));
 	}
 
 	public void get_pos(float pos[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.pos, pos, sizeof(pos));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.pos, pos, sizeof(pos));
 	}
 
 	public void get_quat(float quat[4])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.quat, quat, sizeof(quat));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.quat, quat, sizeof(quat));
 	}
 
 	public void get_rot(float rot[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.rot, rot, sizeof(rot));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.rot, rot, sizeof(rot));
 	}
 
 	public void get_posscale(float posscale[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.posscale, posscale, sizeof(posscale));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.posscale, posscale, sizeof(posscale));
 	}
 
 	public void get_rotscale(float rotscale[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.rotscale, rotscale, sizeof(rotscale));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.rotscale, rotscale, sizeof(rotscale));
 	}
 	
-		public void get_poseToBone(float poseToBone[3][4])
-		{
-			this.Validate();
-			
-			for (int current_arr; current_arr < sizeof(poseToBone); current_arr++)
-			{
-				LoadArrayFromAddress(
-					// base + offset + offset of array: array index * (4 variables * 4 bytes)
-					view_as<Address>(this) + g_Offsets.mstudiobone_t.poseToBone + view_as<Address>(current_arr * (sizeof(poseToBone[]))),
-					// store in the right array.
-					poseToBone[current_arr],
-					sizeof(poseToBone[])
-				);
-			}
-		}
+	public void get_poseToBone(float poseToBone[3][4])
+	{
+		this.Validate();
 		
+		for (int current_arr; current_arr < sizeof(poseToBone); current_arr++)
+		{
+			StudioHdr.LoadArrayFromAddress(
+				// base + offset + offset of array: array index * (4 variables * 4 bytes)
+				view_as<Address>(this) + g_Offsets.mstudiobone_t.poseToBone + view_as<Address>(current_arr * (sizeof(poseToBone[]))),
+				// store in the right array.
+				poseToBone[current_arr],
+				sizeof(poseToBone[])
+			);
+		}
+	}
 
 	public void get_qAlignment(float qAlignment[4])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.qAlignment, qAlignment, sizeof(qAlignment));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobone_t.qAlignment, qAlignment, sizeof(qAlignment));
 	}
 
 	property int flags
@@ -2060,13 +2065,7 @@ methodmap Bone < AddressObject
 	}
 }
 
-// Bone Controller //
-enum BoneController
-{
-	NULL_BONE_CONTROLLER
-}
-
-methodmap BoneController < AddressObject
+methodmap BoneController < StudioHdrAddressObject
 {
 	public BoneController(Address base, int index)
 	{
@@ -2140,13 +2139,7 @@ methodmap BoneController < AddressObject
 	}
 }
 
-// HitBox //
-enum HitBox
-{
-	NULL_HITBOX
-}
-
-methodmap HitBox < AddressObject
+methodmap HitBox < StudioHdrAddressObject
 {
 	public HitBox(Address base, int index)
 	{
@@ -2179,14 +2172,14 @@ methodmap HitBox < AddressObject
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobbox_t.bbmin, bbmin, sizeof(bbmin));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobbox_t.bbmin, bbmin, sizeof(bbmin));
 	}
 
 	public void get_bbmax(float bbmax[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobbox_t.bbmax, bbmax, sizeof(bbmax));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobbox_t.bbmax, bbmax, sizeof(bbmax));
 	}
 
 	property int szhitboxnameindex
@@ -2204,7 +2197,7 @@ methodmap HitBox < AddressObject
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobbox_t.angOffsetOrientation, angOffsetOrientation, sizeof(angOffsetOrientation));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiobbox_t.angOffsetOrientation, angOffsetOrientation, sizeof(angOffsetOrientation));
 	}
 
 	property float flCapsuleRadius
@@ -2219,13 +2212,7 @@ methodmap HitBox < AddressObject
 	}
 }
 
-// HitBox Set //
-enum HitBoxSet
-{
-	NULL_HITBOX_SET
-}
-
-methodmap HitBoxSet < AddressObject
+methodmap HitBoxSet < StudioHdrAddressObject
 {
 	public HitBoxSet(Address base, int index)
 	{
@@ -2247,7 +2234,7 @@ methodmap HitBoxSet < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int numhitboxes
@@ -2283,17 +2270,11 @@ methodmap HitBoxSet < AddressObject
 			return HitBox(view_as<Address>(this) + view_as<Address>(this.hitboxindex), index);
 		}
 
-		return NULL_HITBOX;
+		return StudioHdrAddressObject.Invalid();
 	}
 }
 
-// Animation //
-enum Animation
-{
-	NULL_ANIMATION
-}
-
-methodmap Animation < AddressObject
+methodmap Animation < StudioHdrAddressObject
 {
 	public Animation(Address base, int index)
 	{
@@ -2326,7 +2307,7 @@ methodmap Animation < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property float fps
@@ -2539,13 +2520,7 @@ methodmap Animation < AddressObject
 	}
 }
 
-// IKLock //
-enum IKLock
-{
-	NULL_IKLOCK
-}
-
-methodmap IKLock < AddressObject
+methodmap IKLock < StudioHdrAddressObject
 {
 	public IKLock(Address base, int index)
 	{
@@ -2597,13 +2572,7 @@ methodmap IKLock < AddressObject
 	}
 }
 
-// Sequence //
-enum Sequence
-{
-	NULL_SEQUENCE
-}
-
-methodmap Sequence < AddressObject
+methodmap Sequence < StudioHdrAddressObject
 {
 	public Sequence(Address base, int index)
 	{
@@ -2636,7 +2605,7 @@ methodmap Sequence < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.szlabelindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.szlabelindex), buffer, buffer_size);
 	}
 
 	property int szactivitynameindex
@@ -2654,9 +2623,9 @@ methodmap Sequence < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.szactivitynameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.szactivitynameindex), buffer, buffer_size);
 	}
-	
+
 	property int flags
 	{
 		public get()
@@ -2716,14 +2685,14 @@ methodmap Sequence < AddressObject
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.bbmin, bbmin, sizeof(bbmin));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.bbmin, bbmin, sizeof(bbmin));
 	}
 
 	public void get_bbmax(float bbmax[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.bbmax, bbmax, sizeof(bbmax));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.bbmax, bbmax, sizeof(bbmax));
 	}
 
 	property int numblends
@@ -2763,28 +2732,28 @@ methodmap Sequence < AddressObject
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.groupsize, groupsize, sizeof(groupsize));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.groupsize, groupsize, sizeof(groupsize));
 	}
 
 	public void get_paramindex(int paramindex[2])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.paramindex, paramindex, sizeof(paramindex));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.paramindex, paramindex, sizeof(paramindex));
 	}
 
 	public void get_paramstart(float paramstart[2])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.paramstart, paramstart, sizeof(paramstart));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.paramstart, paramstart, sizeof(paramstart));
 	}
 
 	public void get_paramend(float paramend[2])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.paramend, paramend, sizeof(paramend));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudioseqdesc_t.paramend, paramend, sizeof(paramend));
 	}
 
 	property int paramparent
@@ -3082,17 +3051,11 @@ methodmap Sequence < AddressObject
 			return IKLock(view_as<Address>(this) + view_as<Address>(this.iklockindex), index);
 		}
 
-		return NULL_IKLOCK;
+		return StudioHdrAddressObject.Invalid();
 	}
 }
 
-// BodyPart //
-enum BodyPart
-{
-	NULL_BODYPART
-}
-
-methodmap BodyPart < AddressObject
+methodmap BodyPart < StudioHdrAddressObject
 {
 	public BodyPart(Address base, int index)
 	{
@@ -3114,7 +3077,7 @@ methodmap BodyPart < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int nummodels
@@ -3151,13 +3114,7 @@ methodmap BodyPart < AddressObject
 	}
 }
 
-// Attachment //
-enum Attachment
-{
-	NULL_ATTACHMENT
-}
-
-methodmap Attachment < AddressObject
+methodmap Attachment < StudioHdrAddressObject
 {
 	public Attachment(Address base, int index)
 	{
@@ -3179,7 +3136,7 @@ methodmap Attachment < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int flags
@@ -3210,7 +3167,7 @@ methodmap Attachment < AddressObject
 		
 		for (int current_arr; current_arr < sizeof(local); current_arr++)
 		{
-			LoadArrayFromAddress(
+			StudioHdr.LoadArrayFromAddress(
 				// base + offset + offset of array: array index * (4 variables * 4 bytes)
 				view_as<Address>(this) + g_Offsets.mstudioattachment_t.local + view_as<Address>(current_arr * (sizeof(local[]) * 4)),
 				// store in the right array.
@@ -3221,13 +3178,7 @@ methodmap Attachment < AddressObject
 	}
 }
 
-// Flex //
-enum Flex
-{
-	NULL_FLEX
-}
-
-methodmap Flex < AddressObject
+methodmap Flex < StudioHdrAddressObject
 {
 	public Flex(Address base, int index)
 	{
@@ -3246,13 +3197,7 @@ methodmap Flex < AddressObject
 	}
 }
 
-// Flex Controller //
-enum FlexController
-{
-	NULL_FLEX_CONTROLLER
-}
-
-methodmap FlexController < AddressObject
+methodmap FlexController < StudioHdrAddressObject
 {
 	public FlexController(Address base, int index)
 	{
@@ -3285,7 +3230,7 @@ methodmap FlexController < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int localToGlobal
@@ -3322,13 +3267,7 @@ methodmap FlexController < AddressObject
 	}
 }
 
-// Flex Rule //
-enum FlexRule
-{
-	NULL_FLEX_RULE
-}
-
-methodmap FlexRule < AddressObject
+methodmap FlexRule < StudioHdrAddressObject
 {
 	public FlexRule(Address base, int index)
 	{
@@ -3369,13 +3308,7 @@ methodmap FlexRule < AddressObject
 	}
 }
 
-// IKChain //
-enum IKChain
-{
-	NULL_IKCHAIN
-}
-
-methodmap IKChain < AddressObject
+methodmap IKChain < StudioHdrAddressObject
 {
 	public IKChain(Address base, int index)
 	{
@@ -3397,7 +3330,7 @@ methodmap IKChain < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int linktype
@@ -3434,13 +3367,7 @@ methodmap IKChain < AddressObject
 	}
 }
 
-// Mouth //
-enum Mouth
-{
-	NULL_MOUTH
-}
-
-methodmap Mouth < AddressObject
+methodmap Mouth < StudioHdrAddressObject
 {
 	public Mouth(Address base, int index)
 	{
@@ -3462,7 +3389,7 @@ methodmap Mouth < AddressObject
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiomouth_t._forward, _forward, sizeof(_forward));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.mstudiomouth_t._forward, _forward, sizeof(_forward));
 	}
 
 	property int flexdesc
@@ -3478,13 +3405,7 @@ methodmap Mouth < AddressObject
 
 }
 
-// Pose Parameter //
-enum PoseParameter
-{
-	NULL_POSE_PARAMETER
-}
-
-methodmap PoseParameter < AddressObject
+methodmap PoseParameter < StudioHdrAddressObject
 {
 	public PoseParameter(Address base, int index)
 	{
@@ -3506,7 +3427,7 @@ methodmap PoseParameter < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int flags
@@ -3554,13 +3475,7 @@ methodmap PoseParameter < AddressObject
 	}
 }
 
-// Include Model //
-enum IncludeModel
-{
-	NULL_INCLUDE_MODEL
-}
-
-methodmap IncludeModel < AddressObject
+methodmap IncludeModel < StudioHdrAddressObject
 {
 	public IncludeModel(Address base, int index)
 	{
@@ -3582,7 +3497,7 @@ methodmap IncludeModel < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.szlabelindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.szlabelindex), buffer, buffer_size);
 	}
 
 	property int sznameindex
@@ -3600,17 +3515,11 @@ methodmap IncludeModel < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 }
 
-// Animation Block //
-enum AnimationBlock
-{
-	NULL_ANIMATION_BLOCK
-}
-
-methodmap AnimationBlock < AddressObject
+methodmap AnimationBlock < StudioHdrAddressObject
 {
 	public AnimationBlock(Address base, int index)
 	{
@@ -3641,13 +3550,7 @@ methodmap AnimationBlock < AddressObject
 
 }
 
-// Flex Controller UI //
-enum FlexControllerUI
-{
-	NULL_FLEX_CONTROLLER_UI
-}
-
-methodmap FlexControllerUI < AddressObject
+methodmap FlexControllerUI < StudioHdrAddressObject
 {
 	public FlexControllerUI(Address base, int index)
 	{
@@ -3669,7 +3572,7 @@ methodmap FlexControllerUI < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int szindex0
@@ -3717,13 +3620,7 @@ methodmap FlexControllerUI < AddressObject
 	}
 }
 
-// Texture //
-enum Texture
-{
-	NULL_TEXTURE
-}
-
-methodmap Texture < AddressObject
+methodmap Texture < StudioHdrAddressObject
 {
 	public Texture(Address base, int index)
 	{
@@ -3745,7 +3642,7 @@ methodmap Texture < AddressObject
 	{
 		this.Validate();
 		
-		LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
+		StudioHdr.LoadStringFromAddress(view_as<Address>(this) + view_as<Address>(this.sznameindex), buffer, buffer_size);
 	}
 
 	property int flags
@@ -3760,20 +3657,27 @@ methodmap Texture < AddressObject
 	}
 }
 
-// StudioHdr //
-enum StudioHdr
-{
-	NULL_STUDIO_HDR
-}
+// Functions to get CStudioHdr from model path & delete it.
+static Handle load_model;
+static Handle delete_model;
 
-methodmap StudioHdr < AddressObject
+methodmap StudioHdr < StudioHdrAddressObject
 {
+	public static StudioHdr FromEntity(int entity)
+	{
+		char model[PLATFORM_MAX_PATH];
+		GetEntPropString(entity, Prop_Data, "m_ModelName", model, sizeof(model));
+		return StudioHdr(model);
+	}
+	
 	// Constructor [model path]
 	public StudioHdr(const char[] model_path)
 	{
+		StudioHdr.Init();
+
 		if (!model_path[0])
 		{
-			return NULL_STUDIO_HDR;
+			return StudioHdrAddressObject.Invalid();
 		}
 		
 		// Create a new CStudioHdr variable based on the model path.
@@ -3781,7 +3685,7 @@ methodmap StudioHdr < AddressObject
 		
 		if (!CStudioHdr)
 		{
-			return NULL_STUDIO_HDR;
+			return StudioHdrAddressObject.Invalid();
 		}
 		
 		// Load 'studiohdr_t *m_pStudioHdr' from 'CStudioHdr' pointer. (can be treated as if it was a studiohdr_t **)
@@ -3792,6 +3696,67 @@ methodmap StudioHdr < AddressObject
 		
 		// Return the 'studiohdr_t' variable.
 		return m_pStudioHdr;
+	}
+
+	// Loads a string from memory (null-terminated).
+	public static void LoadStringFromAddress(Address charptr, char[] buffer, int buffer_size)
+	{
+		int current_char_index;
+		while (current_char_index < buffer_size && (buffer[current_char_index] = view_as<char>(LoadFromAddress(charptr + view_as<Address>(current_char_index), NumberType_Int8))))
+		{
+			current_char_index++;
+		}
+		
+		buffer[current_char_index] = '\0';
+	}
+
+	// Loads an array of values from memory.
+	public static void LoadArrayFromAddress(Address address, any[] buffer, int size, NumberType datasize = NumberType_Int32)
+	{
+		int datasize_bytes = view_as<int>(datasize) + (datasize == NumberType_Int32 ? 2 : 1);
+		for (int current_index; current_index < size; current_index++)
+		{
+			buffer[current_index] = LoadFromAddress(address + view_as<Address>(datasize_bytes * current_index), datasize);
+		}
+	}
+
+	public static void Init()
+	{
+		if (load_model)
+			return;
+		
+		GameData gamedata = new GameData("studio_hdr.games");
+		
+		if (!gamedata)
+		{
+			SetFailState("Couldn't find gamedata file 'studio_hdr.games.txt'.");
+		}
+
+		// CStudioHdr *ModelSoundsCache_LoadModel( const char *filename )
+		StartPrepSDKCall(SDKCall_Static);
+		PrepSDKCall_SetFromConf(gamedata, SDKConf_Signature, "ModelSoundsCache_LoadModel");
+		PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
+		PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
+		
+		if (!(load_model = EndPrepSDKCall()))
+		{
+			SetFailState("Missing signature 'ModelSoundsCache_LoadModel'");
+		}
+		
+		// void ModelSoundsCache_FinishModel( CStudioHdr *hdr )
+		StartPrepSDKCall(SDKCall_Static);
+		PrepSDKCall_SetFromConf(gamedata, SDKConf_Signature, "ModelSoundsCache_FinishModel");
+		PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+		
+		if (!(delete_model = EndPrepSDKCall()))
+		{
+			SetFailState("Missing signature 'ModelSoundsCache_FinishModel'");
+		}
+
+		// Load structs offsets:
+		g_Offsets.LoadOffsets(gamedata);
+
+		delete gamedata;
 	}
 
 	// Offsets
@@ -3844,42 +3809,42 @@ methodmap StudioHdr < AddressObject
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.eyeposition, eyeposition, sizeof(eyeposition));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.eyeposition, eyeposition, sizeof(eyeposition));
 	}
 
 	public void get_illumposition(float illumposition[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.illumposition, illumposition, sizeof(illumposition));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.illumposition, illumposition, sizeof(illumposition));
 	}
 
 	public void get_hull_min(float hull_min[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.hull_min, hull_min, sizeof(hull_min));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.hull_min, hull_min, sizeof(hull_min));
 	}
 
 	public void get_hull_max(float hull_max[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.hull_max, hull_max, sizeof(hull_max));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.hull_max, hull_max, sizeof(hull_max));
 	}
 
 	public void get_view_bbmin(float view_bbmin[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.view_bbmin, view_bbmin, sizeof(view_bbmin));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.view_bbmin, view_bbmin, sizeof(view_bbmin));
 	}
 
 	public void get_view_bbmax(float view_bbmax[3])
 	{
 		this.Validate();
 		
-		LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.view_bbmax, view_bbmax, sizeof(view_bbmax));
+		StudioHdr.LoadArrayFromAddress(view_as<Address>(this) + g_Offsets.studiohdr_t.view_bbmax, view_bbmax, sizeof(view_bbmax));
 	}
 
 	property int flags
@@ -4553,7 +4518,7 @@ methodmap StudioHdr < AddressObject
 			return Bone(view_as<Address>(this) + view_as<Address>(this.boneindex), index);
 		}
 
-		return NULL_BONE;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public BoneController GetBoneController(int index)
@@ -4565,7 +4530,7 @@ methodmap StudioHdr < AddressObject
 			return BoneController(view_as<Address>(this) + view_as<Address>(this.bonecontrollerindex), index);
 		}
 
-		return NULL_BONE_CONTROLLER;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public HitBoxSet GetHitBoxSet(int index)
@@ -4577,7 +4542,7 @@ methodmap StudioHdr < AddressObject
 			return HitBoxSet(view_as<Address>(this) + view_as<Address>(this.hitboxsetindex), index);
 		}
 
-		return NULL_HITBOX_SET;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public HitBox GetHitBox(int hitbox_set_index, int hitbox_index)
@@ -4585,12 +4550,12 @@ methodmap StudioHdr < AddressObject
 		this.Validate();
 
 		HitBoxSet hitbox_set = this.GetHitBoxSet(hitbox_set_index);
-		if (hitbox_set != NULL_HITBOX_SET && (0 <= hitbox_index < hitbox_set.numhitboxes))
+		if (hitbox_set.valid && (0 <= hitbox_index < hitbox_set.numhitboxes))
 		{
 			return hitbox_set.GetHitBox(hitbox_index);
 		}
 
-		return NULL_HITBOX;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public Animation GetAnimation(int index)
@@ -4602,7 +4567,7 @@ methodmap StudioHdr < AddressObject
 			return Animation(view_as<Address>(this) + view_as<Address>(this.localanimindex), index);
 		}
 
-		return NULL_ANIMATION;
+		return StudioHdrAddressObject.Invalid();
 	}
 	
 	public Sequence GetSequence(int index)
@@ -4614,7 +4579,7 @@ methodmap StudioHdr < AddressObject
 			return Sequence(view_as<Address>(this) + view_as<Address>(this.localseqindex), index);
 		}
 
-		return NULL_SEQUENCE;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public BodyPart GetBodyPart(int index)
@@ -4626,7 +4591,7 @@ methodmap StudioHdr < AddressObject
 			return BodyPart(view_as<Address>(this) + view_as<Address>(this.bodypartindex), index);
 		}
 
-		return NULL_BODYPART;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public Attachment GetAttachment(int index)
@@ -4638,7 +4603,7 @@ methodmap StudioHdr < AddressObject
 			return Attachment(view_as<Address>(this) + view_as<Address>(this.localattachmentindex), index);
 		}
 
-		return NULL_ATTACHMENT;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public Flex GetFlex(int index)
@@ -4650,7 +4615,7 @@ methodmap StudioHdr < AddressObject
 			return Flex(view_as<Address>(this) + view_as<Address>(this.flexdescindex), index);
 		}
 
-		return NULL_FLEX;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public FlexController GetFlexController(int index)
@@ -4662,7 +4627,7 @@ methodmap StudioHdr < AddressObject
 			return FlexController(view_as<Address>(this) + view_as<Address>(this.flexcontrollerindex), index);
 		}
 
-		return NULL_FLEX_CONTROLLER;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public FlexRule GetFlexRule(int index)
@@ -4674,7 +4639,7 @@ methodmap StudioHdr < AddressObject
 			return FlexRule(view_as<Address>(this) + view_as<Address>(this.flexruleindex), index);
 		}
 
-		return NULL_FLEX_RULE;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public IKChain GetIKChain(int index)
@@ -4686,7 +4651,7 @@ methodmap StudioHdr < AddressObject
 			return IKChain(view_as<Address>(this) + view_as<Address>(this.ikchainindex), index);
 		}
 
-		return NULL_IKCHAIN;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public Mouth GetMouth(int index)
@@ -4698,7 +4663,7 @@ methodmap StudioHdr < AddressObject
 			return Mouth(view_as<Address>(this) + view_as<Address>(this.mouthindex), index);
 		}
 
-		return NULL_MOUTH;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public PoseParameter GetPoseParameter(int index)
@@ -4710,7 +4675,7 @@ methodmap StudioHdr < AddressObject
 			return PoseParameter(view_as<Address>(this) + view_as<Address>(this.localposeparamindex), index);
 		}
 
-		return NULL_POSE_PARAMETER;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public IncludeModel GetIncludeModel(int index)
@@ -4722,7 +4687,7 @@ methodmap StudioHdr < AddressObject
 			return IncludeModel(view_as<Address>(this) + view_as<Address>(this.includemodelindex), index);
 		}
 
-		return NULL_INCLUDE_MODEL;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public AnimationBlock GetAnimationBlock(int index)
@@ -4734,7 +4699,7 @@ methodmap StudioHdr < AddressObject
 			return AnimationBlock(view_as<Address>(this) + view_as<Address>(this.animblockindex), index);
 		}
 
-		return NULL_ANIMATION_BLOCK;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public FlexControllerUI GetFlexControllerUI(int index)
@@ -4746,7 +4711,7 @@ methodmap StudioHdr < AddressObject
 			return FlexControllerUI(view_as<Address>(this) + view_as<Address>(this.flexcontrolleruiindex), index);
 		}
 
-		return NULL_FLEX_CONTROLLER_UI;
+		return StudioHdrAddressObject.Invalid();
 	}
 
 	public Texture GetTexture(int index)
@@ -4758,7 +4723,7 @@ methodmap StudioHdr < AddressObject
 			return Texture(view_as<Address>(this) + view_as<Address>(this.textureindex), index);
 		}
 
-		return NULL_TEXTURE;
+		return StudioHdrAddressObject.Invalid();
 	}
 	
 	public void GetCdTexture(int index, char[] buffer, int buffer_size)
@@ -4768,86 +4733,9 @@ methodmap StudioHdr < AddressObject
 		if (0 <= index < this.numcdtextures)
 		{
 			Address charptr = LoadFromAddress(view_as<Address>(this) + view_as<Address>(this.cdtextureindex + (index * 4)), NumberType_Int32);
-			LoadStringFromAddress(view_as<Address>(this) + charptr, buffer, buffer_size);
+			StudioHdr.LoadStringFromAddress(view_as<Address>(this) + charptr, buffer, buffer_size);
 		}
 		else ThrowError("Invalid index: %d (count: %d)", index, this.numcdtextures);
 	}
-	
-	// Objects [Find By Name]
+
 }
-
-// Loads a string from memory (null-terminated).
-stock void LoadStringFromAddress(Address charptr, char[] buffer, int buffer_size)
-{
-	int current_char_index;
-	while (current_char_index < buffer_size && (buffer[current_char_index] = view_as<char>(LoadFromAddress(charptr + view_as<Address>(current_char_index), NumberType_Int8))))
-	{
-		current_char_index++;
-	}
-	
-	buffer[current_char_index] = '\0';
-}
-
-// Loads an array of values from memory.
-stock void LoadArrayFromAddress(Address address, any[] buffer, int size, NumberType datasize = NumberType_Int32)
-{
-	int datasize_bytes = view_as<int>(datasize) + (datasize == NumberType_Int32 ? 2 : 1);
-	for (int current_index; current_index < size; current_index++)
-	{
-		buffer[current_index] = LoadFromAddress(address + view_as<Address>(datasize_bytes * current_index), datasize);
-	}
-}
-
-stock StudioHdr GetEntityStudioHdr(int entity)
-{
-	char model[PLATFORM_MAX_PATH];
-	GetEntPropString(entity, Prop_Data, "m_ModelName", model, sizeof(model));
-	return StudioHdr(model);
-}
-
-public void OnPluginStart()
-{
-	GameData gamedata = new GameData("studio_hdr.games");
-	
-	if (!gamedata)
-	{
-		SetFailState("Couldn't find gamedata file 'studio_hdr.games.txt'.");
-	}
-	
-	PrepareSDKCalls(gamedata);
-
-	// Load structs offsets:
-	g_Offsets.LoadOffsets(gamedata);
-
-	delete gamedata;
-	
-	_OnPluginStart();
-}
-
-void PrepareSDKCalls(GameData gamedata)
-{
-	// CStudioHdr *ModelSoundsCache_LoadModel( const char *filename )
-	StartPrepSDKCall(SDKCall_Static);
-	PrepSDKCall_SetFromConf(gamedata, SDKConf_Signature, "ModelSoundsCache_LoadModel");
-	
-	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
-	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
-	
-	if (!(load_model = EndPrepSDKCall()))
-	{
-		SetFailState("Missing signature 'ModelSoundsCache_LoadModel'");
-	}
-	
-	// void ModelSoundsCache_FinishModel( CStudioHdr *hdr )
-	StartPrepSDKCall(SDKCall_Static);
-	PrepSDKCall_SetFromConf(gamedata, SDKConf_Signature, "ModelSoundsCache_FinishModel");
-	
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	
-	if (!(delete_model = EndPrepSDKCall()))
-	{
-		SetFailState("Missing signature 'ModelSoundsCache_FinishModel'");
-	}
-}
-
-#define OnPluginStart _OnPluginStart
